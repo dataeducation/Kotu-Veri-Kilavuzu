@@ -92,7 +92,7 @@ Bu kılavuzu kendi dilinize çevirmek ister misiniz? Lütfen çevirin! [Chris](m
 
 ## Kayıp veriler
 
-Beware blank or "null" values in any dataset unless you are certain you know what they mean. If the data are annual, was the value for that year never collected? If it is a survey, did a respondent refuse to answer the question?
+Herhangi bir veri setindeki boş ya da "null" değerlerin ne anlama geldiğine mutlaka emin olun. If the data are annual, was the value for that year never collected? If it is a survey, did a respondent refuse to answer the question?
 
 Any time you're working with data that has missing values you should ask yourself: "Do I know what the absence of this value means?" If the answer is no, you should ask your source.
 
