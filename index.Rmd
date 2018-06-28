@@ -1,13 +1,14 @@
 ---
 title: "Kötü veri kılavuzu"
-subtitle: "Gerçek dünyada verilerde sık görülen sorunlara kapsamlı bir bakış ve bunlar için çözüm önerileri"
-author: "Yazar: [Christopher Groskopf](https://github.com/onyxfish) Metnin orijinali: [The Quartz guide to bad data](https://github.com/Quartz/bad-data-guide) Çeviren: [Serdar Balcı](https://github.com/sbalci)"  
-output: 
-  html_notebook: 
+author: "Yazar: [Christopher Groskopf](https://github.com/onyxfish) Metnin orijinali: [The Quartz guide to bad data](https://github.com/Quartz/bad-data-guide) Çeviren: [Serdar Balcı](https://github.com/sbalci)"
+subtitle: Günlük pratikte verilerde sık görülen sorunlara kapsamlı bir bakış ve bunlar için çözüm önerileri
+output:
+  html_document:
     toc: yes
 ---
 
 # Kılavuzun amacı
+
 Bir muhabir olarak tüm dünyanız veri ile dolu. Ve bu veriler de problemlerle dolu. Bu kılavuz veriler üzerinde çalışırken karşılaşacağınız birçok sorunla ilgili detaylı açıklamalar ve çözüm önerileri sunmayı hedeflemektedir. 
 
 Bu sorunların çoğu çözülebilir. Bir kısmı ise çözülemez ve bu da ilgili veriyi kullanmamanız gerektiği anlamına gelir. Diğer bir kısımda ise sorunlar çözülemese de veriyi oldukça dikkatli bir şekilde kullanmak mümkündür. Bu belirsizlikleri aşmak için bu kılavuz, sorunları en iyi şekilde çözecek donanıma sahip olan sizler için (siz, kaynağınız, konunun uzmanı) hazırlanmıştır. Her sorunun tanımında eğer ilgili kişi size yardım edemezse neler yapabileceğinize dair öneriler yer almaktadır.
@@ -87,18 +88,20 @@ Bu kılavuzu kendi dilinize çevirmek ister misiniz? Lütfen çevirin! [Chris](m
 <!-- * [Data are aggregated to the wrong categories or geographies](#data-are-aggregated-to-the-wrong-categories-or-geographies) -->
 <!-- * [Data are in scanned documents](#data-are-in-scanned-documents) -->
 
+# Sorunlar
+## Kaynağınızın çözmesi gereken sorunlar
 
-# Kaynağınızın çözmesi gereken sorunlar
+### Kayıp veriler
 
-## Kayıp veriler
+Herhangi bir veri setindeki boş ya da "null" değerlerin ne anlama geldiğine mutlaka emin olun. Eğer veri yıla ait ise, o yıla ait hiç veri toplanmamış mı? Eğer bir anket ise, katılımcılardan biri soruya cevap vermeyi mi reddetti?
 
-Herhangi bir veri setindeki boş ya da "null" değerlerin ne anlama geldiğine mutlaka emin olun. If the data are annual, was the value for that year never collected? If it is a survey, did a respondent refuse to answer the question?
 
-Any time you're working with data that has missing values you should ask yourself: "Do I know what the absence of this value means?" If the answer is no, you should ask your source.
+Ne zaman kayıp değerleri olan bir veri üzerine çalışırsanız kendinize şunu sorun: "Bu verinin kayıp olmasının anlamını biliyor muyum?" Eğer cevabınız hayır ise, bunu kaynağınıza sormalısınız.
 
-### Zeros replace missing values
+### Kayıp verilerin yerine sıfır konulması
 
-Worse than a missing value is when an arbitrary value is used instead. This can be the result of a human not thinking through the implications or it can happen as the result of automated processes that simply don't know how to handle null values. In any case, if you see zeros in a series of numbers you should ask yourself if those values are really the number `0` or if they instead mean "nothing". (`-1` is also sometimes used this way.) If you aren't sure, ask your source.
+Kayıp veriden daha kötüsü ise kayıp veriler yerine herhangi bir verinin kullanılmasıdır.
+This can be the result of a human not thinking through the implications or it can happen as the result of automated processes that simply don't know how to handle null values. In any case, if you see zeros in a series of numbers you should ask yourself if those values are really the number `0` or if they instead mean "nothing". (`-1` is also sometimes used this way.) If you aren't sure, ask your source.
 
 The same caution should be exercised for other non-numerical values where a `0` may be represented in another way. For example a false `0` value for a date is often displayed as `1970-01-01T00:00:00Z` or `1969-12-31T24:59:59Z` which is the [Unix epoch for timestamps](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number). A false `0` for a location might be represented as `0°00'00.0"N+0°00'00.0"E` or simply `0°N 0°E` which is a point in the Atlantic Ocean just south of Ghana often referred to as [Null Island](https://en.wikipedia.org/wiki/Null_Island).
 
