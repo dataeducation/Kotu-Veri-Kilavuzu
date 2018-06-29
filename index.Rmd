@@ -89,6 +89,7 @@ Bu kılavuzu kendi dilinize çevirmek ister misiniz? Lütfen çevirin! [Chris](m
 <!-- * [Data are in scanned documents](#data-are-in-scanned-documents) -->
 
 # Sorunlar
+
 ## Kaynağınızın çözmesi gereken sorunlar
 
 ### Kayıp veriler
@@ -100,12 +101,9 @@ Ne zaman kayıp değerleri olan bir veri üzerine çalışırsanız kendinize ş
 
 ### Kayıp verilerin yerine sıfır konulması
 
-Kayıp veriden daha kötüsü ise kayıp veriler yerine herhangi bir verinin kullanılmasıdır.
-This can be the result of a human not thinking through the implications or it can happen as the result of automated processes that simply don't know how to handle null values. In any case, if you see zeros in a series of numbers you should ask yourself if those values are really the number `0` or if they instead mean "nothing". (`-1` is also sometimes used this way.) If you aren't sure, ask your source.
+Kayıp veriden daha kötüsü ise kayıp veriler yerine herhangi bir verinin kullanılmasıdır. Bunun nedeni, etkilerinin ne olacağını tahmin edemeyen bir insan olabileceği gibi, "null" verileri nasıl işleyeceğini bilemeyen bir otomatik süreç de olabilir. Her halde, eğer bir seri halinde sıfırlar görürseniz bunun gerçekten `0` sayısı mı yoksa "hiç bir şey" mi demek olduğunu kendinize sormalısınız (Genelde `-1` "hiç bir şey" anlamında kullanılır). Eğer emin değilseniz, kaynağınıza sorun. Benzer bir özeni `0`'ın farklı şekilde yansıdığı numerik olmayan diğer değerlerde de göstermelisiniz. Örneğin, tarih verisi için `0` değeri hatalı olarak `1970-01-01T00:00:00Z` ya da `1969-12-31T24:59:59Z` ( [Unix epoch for timestamps](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number) ) şeklinde görünebilir. Lokalizasyon verisi için `0` hatalı olarak `0°00'00.0"N+0°00'00.0"E` ya da daha basitçe `0°N 0°E` olarak görünebilir, ki burası Gana'nin güneyinde, Atlantik Okyanusunda yer alan ve genellikle [Null Island](https://en.wikipedia.org/wiki/Null_Island) olarak adlandırılan yerdir.
 
-The same caution should be exercised for other non-numerical values where a `0` may be represented in another way. For example a false `0` value for a date is often displayed as `1970-01-01T00:00:00Z` or `1969-12-31T24:59:59Z` which is the [Unix epoch for timestamps](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number). A false `0` for a location might be represented as `0°00'00.0"N+0°00'00.0"E` or simply `0°N 0°E` which is a point in the Atlantic Ocean just south of Ghana often referred to as [Null Island](https://en.wikipedia.org/wiki/Null_Island).
-
-See also:
+Ayrıca bakınız:
 
 * [Suspicious values are present](#suspicious-values-are-present)
 * [Spreadsheet has dates in 1900, 1904, 1969, or 1970](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)
