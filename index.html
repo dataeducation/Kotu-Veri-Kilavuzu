@@ -320,7 +320,7 @@ $(document).ready(function () {
 <li><a href="#kaynagnzn-cozmesi-gereken-sorunlar">Kaynağınızın çözmesi gereken sorunlar</a><ul>
 <li><a href="#kayp-veriler">Kayıp veriler</a></li>
 <li><a href="#kayp-verilerin-yerine-sfr-konulmas">Kayıp verilerin yerine sıfır konulması</a></li>
-<li><a href="#data-are-missing-you-know-should-be-there">Data are missing you know should be there</a></li>
+<li><a href="#olmas-gerektigini-bildiginiz-veriler-kayp">Olması gerektiğini bildiğiniz veriler kayıp</a></li>
 <li><a href="#rows-or-values-are-duplicated">Rows or values are duplicated</a></li>
 <li><a href="#spelling-is-inconsistent">Spelling is inconsistent</a></li>
 <li><a href="#name-order-is-inconsistent">Name order is inconsistent</a></li>
@@ -376,10 +376,10 @@ $(document).ready(function () {
 
 <div id="klavuzun-amac" class="section level1">
 <h1>Kılavuzun amacı</h1>
-<p>Bir muhabir olarak tüm dünyanız veri ile dolu. Ve bu veriler de problemlerle dolu. Bu kılavuz veriler üzerinde çalışırken karşılaşacağınız birçok sorunla ilgili detaylı açıklamalar ve çözüm önerileri sunmayı hedeflemektedir.</p>
+<p>Bir muhabir<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> olarak tüm dünyanız veri ile dolu. Ve bu veriler de problemlerle dolu. Bu kılavuz veriler üzerinde çalışırken karşılaşacağınız birçok sorunla ilgili detaylı açıklamalar ve çözüm önerileri sunmayı hedeflemektedir.</p>
 <p>Bu sorunların çoğu çözülebilir. Bir kısmı ise çözülemez ve bu da ilgili veriyi kullanmamanız gerektiği anlamına gelir. Diğer bir kısımda ise sorunlar çözülemese de veriyi oldukça dikkatli bir şekilde kullanmak mümkündür. Bu belirsizlikleri aşmak için bu kılavuz, sorunları en iyi şekilde çözecek donanıma sahip olan sizler için (siz, kaynağınız, konunun uzmanı) hazırlanmıştır. Her sorunun tanımında eğer ilgili kişi size yardım edemezse neler yapabileceğinize dair öneriler yer almaktadır.</p>
 <p>Elde ettiğiniz her veriyi tüm bu sorunlar için gözden geçirmeniz mümkün değildir. Eğer öyle yaparsanız yayın yapamazsınız. Ancak bu sorunlara aşinalık kazanarak, karşılaşabileceğiniz sorunları öngörebilirsiniz. Ve size hata yaptırmadan önce bu sorunları tahmin etme olasılığınızı arttırabilirsiniz.</p>
-<p>Bu kılavuz ile ilgili sorularınız varsa lütfen <a href="mailto:chrisgroskopf@gmail.com">Chris</a>’e Türkçe çevirisi için de <a href="drserdarbalci@gmail.com">Serdar</a>’a ulaşın. Bol şans!</p>
+<p>Bu kılavuz ile ilgili sorularınız varsa lütfen <a href="mailto:chrisgroskopf@gmail.com">Chris</a>’e Türkçe çevirisi<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> için de <a href="drserdarbalci@gmail.com">Serdar</a>’a ulaşın. Bol şans!</p>
 <p>Bu çalışma <a href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a> ile lisanslanmıştır. Önerileriniz için lütfen <code>pull request</code> gönderin!</p>
 </div>
 <div id="ceviriler" class="section level1">
@@ -454,17 +454,15 @@ $(document).ready(function () {
 </div>
 <div id="kayp-verilerin-yerine-sfr-konulmas" class="section level3">
 <h3>Kayıp verilerin yerine sıfır konulması</h3>
-<p>Kayıp veriden daha kötüsü ise kayıp veriler yerine herhangi bir verinin kullanılmasıdır.</p>
-<p>This can be the result of a human not thinking through the implications or it can happen as the result of automated processes that simply don’t know how to handle null values. In any case, if you see zeros in a series of numbers you should ask yourself if those values are really the number <code>0</code> or if they instead mean “nothing”. (<code>-1</code> is also sometimes used this way.) If you aren’t sure, ask your source.</p>
-<p>The same caution should be exercised for other non-numerical values where a <code>0</code> may be represented in another way. For example a false <code>0</code> value for a date is often displayed as <code>1970-01-01T00:00:00Z</code> or <code>1969-12-31T24:59:59Z</code> which is the <a href="https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number">Unix epoch for timestamps</a>. A false <code>0</code> for a location might be represented as <code>0°00'00.0&quot;N+0°00'00.0&quot;E</code> or simply <code>0°N 0°E</code> which is a point in the Atlantic Ocean just south of Ghana often referred to as <a href="https://en.wikipedia.org/wiki/Null_Island">Null Island</a>.</p>
-<p>See also:</p>
+<p>Kayıp veriden daha kötüsü ise kayıp veriler yerine herhangi bir verinin kullanılmasıdır. Bunun nedeni, etkilerinin ne olacağını tahmin edemeyen bir insan olabileceği gibi, “null” verileri nasıl işleyeceğini bilemeyen bir otomatik süreç de olabilir. Her halde, eğer bir seri halinde sıfırlar görürseniz bunun gerçekten <code>0</code> sayısı mı yoksa “hiç bir şey” mi demek olduğunu kendinize sormalısınız (Genelde <code>-1</code> “hiç bir şey” anlamında kullanılır). Eğer emin değilseniz, kaynağınıza sorun. Benzer bir özeni <code>0</code>’ın farklı şekilde yansıdığı numerik olmayan diğer değerlerde de göstermelisiniz. Örneğin, tarih verisi için <code>0</code> değeri hatalı olarak <code>1970-01-01T00:00:00Z</code> ya da <code>1969-12-31T24:59:59Z</code> ( <a href="https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number">Unix epoch for timestamps</a> ) şeklinde görünebilir. Lokalizasyon verisi için <code>0</code> hatalı olarak <code>0°00'00.0&quot;N+0°00'00.0&quot;E</code> ya da daha basitçe <code>0°N 0°E</code> olarak görünebilir, ki burası Gana’nin güneyinde, Atlantik Okyanusunda yer alan ve genellikle <a href="https://en.wikipedia.org/wiki/Null_Island">Null Island</a> olarak adlandırılan yerdir.</p>
+<p>Ayrıca bakınız:</p>
 <ul>
 <li><a href="#suspicious-values-are-present">Suspicious values are present</a></li>
 <li><a href="#spreadsheet-has-dates-in-1900-1904-1969-or-1970">Spreadsheet has dates in 1900, 1904, 1969, or 1970</a></li>
 </ul>
 </div>
-<div id="data-are-missing-you-know-should-be-there" class="section level3">
-<h3>Data are missing you know should be there</h3>
+<div id="olmas-gerektigini-bildiginiz-veriler-kayp" class="section level3">
+<h3>Olması gerektiğini bildiğiniz veriler kayıp</h3>
 <p>Sometimes data are missing and you can’t tell from the dataset itself, but you can still know because you know what the data purports to be about. If you have a dataset covering the United States then you can check to ensure all 50 states are represented. (And don’t forget about <a href="https://en.wikipedia.org/wiki/Territories_of_the_United_States">the territories</a>—50 isn’t the right number if the dataset includes Puerto Rico.) If you’re dealing with a dataset of baseball players make sure it has the number of teams you expect. Verify that a few players who you know are included. Trust your intuition if something seems to be missing and double-check with your source. The universe of your data might be smaller than you think.</p>
 </div>
 <div id="rows-or-values-are-duplicated" class="section level3">
@@ -801,6 +799,13 @@ $(document).ready(function () {
 </ul>
 </div>
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Bu metin haberciler için hazırlanmış olmakla birlikte aslında veri ile uğraşan herkes için faydalı yönlendirmeler içermektedir.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Çevirmenin ekleri burada olduğu gibi dipnot olarak verilmiştir<a href="#fnref2" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
 
 
