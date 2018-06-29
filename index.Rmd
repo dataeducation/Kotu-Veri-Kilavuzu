@@ -9,13 +9,13 @@ output:
 
 # Kılavuzun amacı
 
-Bir muhabir olarak tüm dünyanız veri ile dolu. Ve bu veriler de problemlerle dolu. Bu kılavuz veriler üzerinde çalışırken karşılaşacağınız birçok sorunla ilgili detaylı açıklamalar ve çözüm önerileri sunmayı hedeflemektedir. 
+Bir muhabir^[Bu metin haberciler için hazırlanmış olmakla birlikte aslında veri ile uğraşan herkes için faydalı yönlendirmeler içermektedir.] olarak tüm dünyanız veri ile dolu. Ve bu veriler de problemlerle dolu. Bu kılavuz veriler üzerinde çalışırken karşılaşacağınız birçok sorunla ilgili detaylı açıklamalar ve çözüm önerileri sunmayı hedeflemektedir. 
 
 Bu sorunların çoğu çözülebilir. Bir kısmı ise çözülemez ve bu da ilgili veriyi kullanmamanız gerektiği anlamına gelir. Diğer bir kısımda ise sorunlar çözülemese de veriyi oldukça dikkatli bir şekilde kullanmak mümkündür. Bu belirsizlikleri aşmak için bu kılavuz, sorunları en iyi şekilde çözecek donanıma sahip olan sizler için (siz, kaynağınız, konunun uzmanı) hazırlanmıştır. Her sorunun tanımında eğer ilgili kişi size yardım edemezse neler yapabileceğinize dair öneriler yer almaktadır.
 
 Elde ettiğiniz her veriyi tüm bu sorunlar için gözden geçirmeniz mümkün değildir. Eğer öyle yaparsanız yayın yapamazsınız. Ancak bu sorunlara aşinalık kazanarak, karşılaşabileceğiniz sorunları öngörebilirsiniz. Ve size hata yaptırmadan önce bu sorunları tahmin etme olasılığınızı arttırabilirsiniz.
 
-Bu kılavuz ile ilgili sorularınız varsa lütfen [Chris](mailto:chrisgroskopf@gmail.com)’e Türkçe çevirisi için de [Serdar](drserdarbalci@gmail.com)’a ulaşın. Bol şans!
+Bu kılavuz ile ilgili sorularınız varsa lütfen [Chris](mailto:chrisgroskopf@gmail.com)’e Türkçe çevirisi^[Çevirmenin ekleri burada olduğu gibi dipnot olarak verilmiştir] için de [Serdar](drserdarbalci@gmail.com)’a ulaşın. Bol şans!
 
 Bu çalışma [Creative Commons Attribution-NonCommercial 4.0 International License](http://creativecommons.org/licenses/by-nc/4.0/) ile lisanslanmıştır. Önerileriniz için lütfen `pull request` gönderin!
 
@@ -108,7 +108,7 @@ Ayrıca bakınız:
 * [Suspicious values are present](#suspicious-values-are-present)
 * [Spreadsheet has dates in 1900, 1904, 1969, or 1970](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)
 
-### Data are missing you know should be there
+### Olması gerektiğini bildiğiniz veriler kayıp
 
 Sometimes data are missing and you can't tell from the dataset itself, but you can still know because you know what the data purports to be about. If you have a dataset covering the United States then you can check to ensure all 50 states are represented. (And don't forget about [the territories](https://en.wikipedia.org/wiki/Territories_of_the_United_States)—50 isn't the right number if the dataset includes Puerto Rico.) If you're dealing with a dataset of baseball players make sure it has the number of teams you expect. Verify that a few players who you know are included. Trust your intuition if something seems to be missing and double-check with your source. The universe of your data might be smaller than you think.
 
